@@ -36,18 +36,23 @@ document.addEventListener("DOMContentLoaded", () => {
     contenedor_tarjeta.appendChild(tarjeta);
   });
 
-  function createEditableField(text) {
+  function createEditableField(text) 
+  {
+    // crea el contenedor del campo editable
     const contenedor = document.createElement("div");
     contenedor.className = "editable";
 
+    // crea el span para la edicion del contenedor
     const span = document.createElement("span");
     span.textContent = text;
     span.setAttribute("contenteditable", "false");
 
+    // crea el icono de "editar" con el dibujo de un lapiz
     const icono = document.createElement("i");
     icono.innerHTML = "&#9998;";
     icono.title = "Editar";
 
+    // crea el escuchador de evento para cuando se preione el icono para editar el campo editable
     icono.addEventListener("click", () => {
       const editable = span.getAttribute("contenteditable") === "true";
       span.setAttribute("contenteditable", !editable);
